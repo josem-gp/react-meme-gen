@@ -21,3 +21,35 @@
 .navbar h4 {
   font-size: 0.75rem;
 }
+
+.input {
+  padding: 40px 0;
+}
+
+.input-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.input-wrapper input {
+  width: 300px;
+  height: 30px;
+  border: 1px solid #d5d4d8;
+  text-indent: 5px;
+}
+
+.button {
+  margin: 0 auto;
+  display: block;
+  background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
+  color: white;
+  width: 636px;
+  border: none;
+  border-radius: 2px;
+  height: 40px;
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
