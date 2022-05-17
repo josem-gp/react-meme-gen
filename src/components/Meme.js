@@ -21,7 +21,11 @@ function Meme() {
         <button className="button" onClick={getMeme}>
           Get a new meme image 🖼
         </button>
-        <img src={meme} alt="random-mem" />
+        <div className="meme">
+          <img src={meme} alt="random-mem" className="meme-image" />
+          <h2 className="meme--text top">One does not simply</h2>
+          <h2 className="meme--text bottom">Walk into Mordor</h2>
+        </div>
       </div>
     </div>
   );
