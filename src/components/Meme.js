@@ -35,12 +35,14 @@ function Meme() {
             type="text"
             placeholder="Top text"
             name="topText"
+            value={meme.topText}
             onChange={handleMemeText}
           ></input>
           <input
             type="text"
             placeholder="Bottom text"
             name="bottomText"
+            value={meme.bottomText}
             onChange={handleMemeText}
           ></input>
         </div>
