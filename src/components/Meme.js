@@ -1,5 +1,5 @@
 import memesData from "../memesData.js";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Meme() {
   const [meme, setMeme] = useState({
@@ -7,7 +7,8 @@ function Meme() {
     bottomText: "",
     randomImage: "http://i.imgflip.com/1bij.jpg",
   });
-  const [allMemeImages, setAllMemeImages] = useState(memesData);
+  const [allMemeImages, setAllMemeImages] = useState([]);
+  const [error, setError] = useState("");
 
   function getMemeImage() {
     const memesArray = allMemeImages.data.memes;
@@ -26,6 +27,22 @@ function Meme() {
       [name]: value,
     }));
   }
+
+  useEffect(() => {
+    fetch("https://api.imgflip.com/get_memes")
+      .then((result) => {
+        if (!result.ok) {
+          throw Error("Error found! Couldn't connect");
+        }
+        return result.json();
+      })
+      .then((data) => {
+        setAllMemeImages(data);
+      })
+      .catch((err) => {
+        setError(err.message);
+      });
+  }, []);
 
   return (
     <div className="input">
